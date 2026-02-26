@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Skin Builder</title>
+<style>
+body{
+  margin:0;
+  background:#0f172a;
+  color:white;
+  font-family:system-ui;
+}
+
+#app{
+  display:grid;
+  grid-template-columns:320px 1fr 260px;
+  height:100vh;
+}
+
+/* LEFT PANEL */
+#library{
+  overflow:auto;
+  border-right:1px solid #1e293b;
+}
+
+/* GRID ẢO */
+.grid{
+  position:relative;
+  height:100000px;
+}
+
+.item{
+  position:absolute;
+  width:96px;
+  height:96px;
+  cursor:pointer;
+}
+
+.item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:6px;
+}
+
+/* CENTER PREVIEW */
+#preview{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+canvas{
+  background:#020617;
+}
+
+/* RIGHT PANEL */
+#tools{
+  padding:10px;
+  border-left:1px solid #1e293b;
+}
+
+button{
+  width:100%;
+  margin-bottom:8px;
+  padding:8px;
+}
+</style>
+</head>
+
+<body>
+<div id="app">
+  <div id="library"><div class="grid" id="grid"></div></div>
+
+  <div id="preview">
+    <canvas id="canvas" width="2130" height="1806"></canvas>
+  </div>
+
+  <div id="tools">
+    <button onclick="setLayout(5)">Layout 5</button>
+    <button onclick="setLayout(17)">Layout 17</button>
+    <button onclick="setLayout(45)">Layout 45</button>
+    <button onclick="setLayout(100)">Layout 100</button>
+    <button onclick="exportPNG()">Export PNG</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
